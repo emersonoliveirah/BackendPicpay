@@ -27,6 +27,7 @@ public class Transaction {
     private User receiver;
     private LocalDateTime timestamp;
 
+
     public User getReceiver() {
         return receiver;
     }

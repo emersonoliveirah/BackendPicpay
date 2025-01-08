@@ -2,10 +2,7 @@ package com.picpaysimplificado.domain.user;
 
 import com.picpaysimplificado.dtos.UserDTO;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 
 import java.math.BigDecimal;
@@ -15,6 +12,7 @@ import java.math.BigDecimal;
 @Entity(name="users")
 @Table(name="users")
 @AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(of="id")
 public class User {
     @Id
@@ -39,6 +37,51 @@ public class User {
         this.balance = data.balance();
         this.password = data.password();
         this.userType = data.userType();
+    }
+
+
+    public User() {
+    }
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getDocument() {
+        return document;
+    }
+
+    public void setDocument(String document) {
+        this.document = document;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public BigDecimal getBalance() {
